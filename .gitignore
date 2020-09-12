@@ -3,3 +3,6 @@
 # dependencies
 /node_modules
 /server/node_modules
+
+#imp
+/keys.js
