@@ -29,3 +29,21 @@ h2 {
   margin-top: 5px;
   text-decoration: underline;
 }
+
+.profileImg {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+}
+
+.customProfile {
+  display: flex;
+  justify-content: space-around;
+  margin: 18px 0px;
+}
+
+.userActivity {
+  display: flex;
+  justify-content: space-between;
+  width: 108%;
+}
