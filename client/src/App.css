@@ -36,14 +36,30 @@ h2 {
   border-radius: 50%;
 }
 
+.profileRoot {
+  max-width: 550px;
+  margin: 0px auto;
+}
+
 .customProfile {
   display: flex;
   justify-content: space-around;
   margin: 18px 0px;
+  border-bottom: 1px solid grey;
 }
 
 .userActivity {
   display: flex;
   justify-content: space-between;
   width: 108%;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.item {
+  width: 30%;
 }
