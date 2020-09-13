@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -12,6 +13,10 @@ function Login() {
           <button className="btn waves-effect waves-light blue darken-2">
             Login
           </button>
+
+          <div className="customLink">
+            <Link to="/signup">Don't have have an account? Signup</Link>
+          </div>
         </div>
       </div>
     </>
