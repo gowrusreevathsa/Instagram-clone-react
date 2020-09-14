@@ -6,6 +6,7 @@ import Home from "./components/screens/Home";
 import SignUp from "./components/screens/SignUp";
 import Login from "./components/screens/Login";
 import Profile from "./components/screens/Profile";
+import CreatePost from "./components/screens/CreatePost";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
         <Route path="/profile" component={Profile} />
+        <Route path="/create" component={CreatePost} />
       </Router>
     </>
   );

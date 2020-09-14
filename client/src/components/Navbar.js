@@ -19,6 +19,11 @@ function Navbar() {
           <li>
             <Link to="/profile">Profile</Link>
           </li>
+          <li>
+            <Link to="/create">
+              <i className="material-icons">add</i>
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
