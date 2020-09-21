@@ -11,35 +11,34 @@ function CreatePost() {
   const history = useHistory();
 
   useEffect(() => {
-    if (url) {
-      fetch("/createpost", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("jwt"),
-        },
-        body: JSON.stringify({
-          title,
-          body,
-          pic: url,
-        }),
+    console.log("Storing post");
+    fetch("/createpost", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("jwt"),
+      },
+      body: JSON.stringify({
+        title,
+        body,
+        pic: url,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.error) {
+          console.log(data.error);
+          M.toast({ html: "Unable to create the post" });
+        } else {
+          history.pushState("/");
+          console.log("Post created");
+          M.toast({ html: "Post created successfully" });
+        }
       })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.error) {
-            console.log(data.error);
-            M.toast({ html: "Unable to create the post" });
-          } else {
-            history.pushState("/");
-            console.log("Post created");
-            M.toast({ html: "Post created successfully" });
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
+      .catch((err) => {
+        console.log(err);
+      });
   }, [url]);
 
   const PostDetails = () => {
@@ -54,7 +53,8 @@ function CreatePost() {
     })
       .then((res) => res.json())
       .then((data) => {
-        setUrl(data);
+        if (data) setUrl(data);
+        console.log("Data posted successfully");
       })
       .catch((err) => {
         console.log(err);
