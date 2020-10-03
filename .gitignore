@@ -6,4 +6,4 @@
 /client/node_modules
 
 #imp
-/keys.js
+/server/keys.js
